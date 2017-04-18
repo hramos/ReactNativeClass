@@ -324,7 +324,7 @@ class CityWeather extends React.Component {
           this.props.weather ? this.props.weather : 'TBD'
         }
         badge={{
-          value: this.props.temp ? this.props.temp : '0 °F',
+          value: this.props.temp ? this.props.temp  + ' °F' : '0 °F',
           badgeContainerStyle: {
             backgroundColor: 'lightblue',
           },
