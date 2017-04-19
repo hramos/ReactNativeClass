@@ -3,7 +3,6 @@ import {
   ActivityIndicator,
   Platform,
   ScrollView,
-  Text,
   View,
 } from 'react-native';
 import { ListItem } from 'react-native-elements';
@@ -79,8 +78,6 @@ class MasterScreen extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({ isLoading: true });
-
     const ids = this.state.cities
       .map(city => city.id)
       .toString();
@@ -225,7 +222,7 @@ class DetailScreen extends React.Component {
   }
 }
 
-export default (MainNavigator = StackNavigator({
+export default StackNavigator({
   Master: { screen: MasterScreen },
   Detail: { screen: DetailScreen },
-}));
+});

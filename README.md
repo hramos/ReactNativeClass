@@ -41,6 +41,8 @@ The app will look something like this when finished:
 
   ![](WeatherApp.gif)
 
+> Try it out on Snack! https://snack.expo.io/rkBtI7BAg
+
 The app will use current weather data provided by the [Open Weather Map API](https://openweathermap.org/api).
 
 At the end of this class, you will have learned the following skills:
@@ -74,11 +76,10 @@ If you want to follow along with the instructor, from scratch, then read on for 
   - Step 3: Run your app on a device
   - Step 4: Experiment with Live Reloading
   - Step 5: Create a custom component
-  - Step 6: Create a scrollable list
-  - Step 7: Populate the list
-  - Step 8: Customize our list of cities
-  - Step 9: Fetching data from the network
-  - Step 10: Navigating between screens
+  - Step 6: Installing packages from npm
+  - Step 7: Build a scrollable list
+  - Step 8: Fetching data from the network
+  - Step 9: Navigating between screens
   - Homework
 
 ---
