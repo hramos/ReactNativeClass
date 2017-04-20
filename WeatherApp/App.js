@@ -16,8 +16,7 @@ class LoadingIndicator extends React.Component {
           paddingTop: 10,
           flex: 1,
           backgroundColor: 'white',
-        }}
-      >
+        }}>
         <ActivityIndicator />
       </View>
     );
@@ -33,17 +32,13 @@ class CityWeather extends React.Component {
           this.props.weather ? this.props.weather : 'TBD'
         }
         badge={{
-          value: this.props.temp
-            ? this.props.temp + ' °F'
-            : '0 °F',
+          value: (this.props.temp || '0') + ' °F',
           badgeContainerStyle: {
             backgroundColor: 'lightblue',
           },
         }}
         avatar={{ uri: this.props.icon }}
-        onPress={
-          this.props.onPress ? this.props.onPress() : null
-        }
+        onPress={this.props.onPress}
         hideChevron={Platform.OS !== 'ios'}
       />
     );
@@ -120,11 +115,11 @@ class MasterScreen extends React.Component {
             temp={city.temp}
             weather={city.weather}
             icon={city.icon}
-            onPress={() =>
-              () =>
-                this.props.navigation.navigate('Detail', {
-                  cityId: city.id,
-                })}
+            onPress={() => {
+              this.props.navigation.navigate('Detail', {
+                cityId: city.id,
+              });
+            }}
           />
         ))}
       </ScrollView>
@@ -185,7 +180,6 @@ class DetailScreen extends React.Component {
     return (
       <View style={{ flex: 1, backgroundColor: 'white' }}>
         <ListItem
-          key={city.id}
           title={city.name}
           subtitle={city.weather}
           avatar={{ uri: city.icon }}
