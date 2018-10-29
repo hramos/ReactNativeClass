@@ -1,6 +1,6 @@
 # React Native 101 Class
 
-Welcome to React Native 101! In this class we will learn more about React Native and how it can be used to build a simple mobile app.
+Welcome to React Native 101! In this class, we will learn more about React Native and how it can be used to build a simple mobile app.
 
 # What is React Native?
 
@@ -13,19 +13,19 @@ React Native is a framework for building native applications using React. React 
   - Your JavaScript code will be executed in a dedicated JavaScript thread, which will communicate with the main UI thread via a bridge.
   This is a two-way street, meaning that events from the native side (such as touches and gestures) are also sent back to the JS thread.
 
-  - You can still write native code, if needed.
+  - You can still write native code if needed.
 
 > You can learn more about React Native at http://facebook.github.io/react-native/
 
 # Prerequisites
 
-This class assumes some basic knowledge of modern JavaScript. React Native supports most ES6 language features, but for simplicity we will try to stick to ES5 whenever possible.
+This class assumes some basic knowledge of modern JavaScript. React Native supports most ES6 language features, but for simplicity, we will try to stick to ES5 whenever possible.
 
   - [Node v6](./InstallingNode.md) is required.
 
   - You should also install the Expo app on your device. This will make it easier for you to preview your app. You can download the Expo app here: https://expo.io
 
-  - Finally, join our WiFi network, "FBOpenSource". The password is "opensource".
+  - Finally, join our WiFi network, "FBOpenSource". The password is "open source".
 
 # Building an app using React Native
 
@@ -57,7 +57,7 @@ At the end of this class, you will have learned the following skills:
 
 ## Using this document
 
-We will be covering a lot of ground today. Your instructor will copy and paste code from this document into the app throughout the class. You can tell which step we're at by looking at the comments that get pasted along with the code.
+We will be covering a lot of ground today. Your instructor will copy and paste the code from this document into the app throughout the class. You can tell which step we're at by looking at the comments that get passed along with the code.
 
 <!--
 When copy/pasting code directly from this document, make sure to only copy the text INSIDE the triple tickmarks (``` and ```). These denote the beginning and the end of a code block. If you're copying from a rendered version of this document, you don't need to worry about this (the code blocks should be obvious, and you would not be able to see this comment, anyway).
@@ -155,7 +155,7 @@ render() {
 
 Here we can see that our component is rendering a `View` component that contains three `Text` components.
 
-A `View` is a built-in React Native component that works much like a `div` in the web. It maps to a `UIView` on iOS, or `android.view` on Android. The `View` component will serve as a building block for most of your React Native components.
+A `View` is a built-in React Native component that works much like a `div` in the web. It maps to a `UIView` on iOS or `android.view` on Android. The `View` component will serve as a building block for most of your React Native components.
 
 A `View` can be styled. In the example above, we are using a style that has been defined at the bottom of our `App.js` file using the `StyleSheet` API:
 
@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
 
 The style names and values usually match how CSS works on the web, except names are written using camel casing, e.g `backgroundColor` rather than `background-color`. The style prop can also be a plain old JavaScript object, as we'll see below.
 
-The `Text` component allows you to display text. It can be styled, much like a `span` in the web.
+The `Text` component allows you to display text. It can be styled, much like a `span` on the web.
 
 Go ahead and try adding some styles to one of our `Text` components:
 
@@ -241,7 +241,7 @@ class App extends React.Component {
 }
 ```
 
-You should now see a simple text box on screen that says "City Weather Temp" after saving. It does not look like much, but this will eventually show the data we want for each city.
+You should now see a simple text box on the screen that says "City Weather Temp" after saving. It does not look like much, but this will eventually show the data we want for each city.
 
 ## Using "props"
 
@@ -487,9 +487,9 @@ fetch('http://www.someapi.com/data.json')
   })
 ```
 
-Given a URL, `fetch()` will make a GET request, and return a Promise object that will either resolve with a response, or reject and provide an error.
+Given a URL, `fetch()` will make a GET request, and return a Promise object that will either resolve with a response or reject and provide an error.
 
-Now all we need is a weather API to query.
+Now, all we need is a weather API to query.
 
 ## The Open Weather Map API
 
@@ -499,11 +499,11 @@ We can use the Open Weather Map API to grab some basic weather information for e
 
 This is basically a GET request to the endpoint at 'http://api.openweathermap.org/data/2.5/group', with some additional parameters:
 
-  - 'APPID' is a key that identifies the app and authorizes use of the API. Your instructor will be using 'b1b35bba8b434a28a0be2a3e1071ae5b' as the app id, and you can get your own by signing up at http://home.openweathermap.org/users/sign_up
+  - 'APPID' is a key that identifies the app and authorizes the use of the API. Your instructor will be using 'b1b35bba8b434a28a0be2a3e1071ae5b' as the app id, and you can get your own by signing up at http://home.openweathermap.org/users/sign_up
 
   - 'units' allows us to specify we want the response in imperial units (degrees Fahrenheit). You can use metric if you prefer.
 
-  - 'ids' is a comma separated list of city ids.
+  - 'ids' is a comma-separated list of city ids.
 
 Using `fetch()`, the code would look something like this:
 
@@ -515,7 +515,7 @@ fetch('http://api.openweathermap.org/data/2.5/group?units=imperial&APPID=b1b35bb
 
 ## Updating `App` to use the Fetch API
 
-Let's use what we just learned. We want to make the network request as soon as our component is displayed on screen. The `React.Component` has a lifecycle method, `componentDidMount`, that is called when the component is added to our view. Sounds like this is a good place to make our request:
+Let's use what we just learned. We want to make the network request as soon as our component is displayed on the screen. The `React.Component` has a lifecycle method, `componentDidMount`, that is called when the component is added to our view. Sounds like this is a good place to make our request:
 
 ```javascript
 componentDidMount() {
@@ -547,9 +547,9 @@ componentDidMount() {
 }
 ```
 
-Note that as the very last step, we use the `this.setState()` API to update our internal state. By using `setState()`, our component is now aware that its state has been updated. This will in turn trigger a re-render.
+Note that as the very last step, we use the `this.setState()` API to update our internal state. By using `setState()`, our component is now aware that its state has been updated. This will, in turn, trigger a re-render.
 
-We just need to update the `render()` method now so that it passes all the new data we're getting from our API, to the `CityWeather` component:
+We just need to update the `render()` method now so that it passes all the new data we're getting from our API to the `CityWeather` component:
 
 ```javascript
 render() {
@@ -672,7 +672,7 @@ There's just one more thing to do, and we'll be done. We still need a way to nav
 navigation.navigate('SCREEN_NAME', { params })
 ```
 
-We want users to be able to tap on a city and have the app display more information about that city's weather. We can achieve this by adding a `onPress` handler to `ListItem` component.
+We want users to be able to tap on a city and have the app display more information about that city's weather. We can achieve this by adding an `onPress` handler to `ListItem` component.
 
 Go back to `MasterScreen`, and pass an additional `onPress` prop to the `CityWeather` component:
 
@@ -693,7 +693,7 @@ Go back to `MasterScreen`, and pass an additional `onPress` prop to the `CityWea
 
 The `navigation` prop is provided by the `StackNavigator` when it renders `MasterScreen`. Now whenever the user taps on a `CityWeather` component, we tell the `StackNavigator` to navigate to the 'Detail' route and display more information about the specific city identified by `cityId`.
 
-Save your app. Tap on an item in the main screen, and observe how the detail screen animates onto screen.
+Save your app. Tap on an item in the main screen, and observe how the detail screen animates onto the screen.
 
 ![](https://github.com/hramos/ReactNativeClass/blob/master/Steps/App-Step9-Navigation-Master.png?raw=true)
 ![](https://github.com/hramos/ReactNativeClass/blob/master/Steps/App-Step9-Navigation-Detail.png?raw=true)
@@ -705,7 +705,7 @@ Save your app. Tap on an item in the main screen, and observe how the detail scr
 
 # Congratulations!
 
-We have now reached the conclusion of today's class. At this point you should have a basic weather app with the ability to display basic weather data for a given list of cities. The app can also navigate between multiple screens.
+We have now reached the conclusion of today's class. At this point, you should have a basic weather app with the ability to display basic weather data for a given list of cities. The app can also navigate between multiple screens.
 
 I hope you've learned something new today. Feel free to ask any questions. I will be around the Open Source Dev Garage most of the time and will be happy to help!
 
