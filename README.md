@@ -25,7 +25,7 @@ This class assumes some basic knowledge of modern JavaScript. React Native suppo
 
   - You should also install the Expo app on your device. This will make it easier for you to preview your app. You can download the Expo app here: https://expo.io
 
-  - Finally, join our WiFi network, "FBOpenSource". The password is "open source".
+  - Finally, join our WiFi network, "FBOpenSource". The password is "opensource".
 
 # Building an app using React Native
 
